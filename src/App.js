@@ -5,10 +5,10 @@ import SearchBox from "./components/SearchBox/SearchBox";
 function App() {
   return (
     <div className="app">
-      <div className="header">
+      <header className="header">
         <Header />
         <SearchBox />
-      </div>
+      </header>
     </div>
   );
 }
