@@ -1,10 +1,11 @@
 import React from "react";
+import { TextField } from "@mui/material";
 import "./SearchBox.css";
 
 const SearchBox = () => {
   return (
     <div className="search">
-      <input type="text" />
+      <TextField id="outlined-basic" label="Outlined" variant="outlined" />
       <button>Search</button>
     </div>
   );
