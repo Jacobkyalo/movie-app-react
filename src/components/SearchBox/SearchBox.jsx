@@ -8,7 +8,10 @@ const SearchBox = () => {
     <div className="search">
       <div className="search__area">
         <input type="text" className="search__box" />
-        <Button variant="contained" sx={{ marginLeft: "3px" }}>
+        <Button
+          variant="contained"
+          sx={{ marginLeft: "3px", backgroundColor: "red" }}
+        >
           <SearchIcon />
         </Button>
       </div>

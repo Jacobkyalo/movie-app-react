@@ -1,0 +1,22 @@
+.banner {
+  position: relative;
+  height: 350px;
+  margin: 10px 15px;
+  padding: 0 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.banner__content {
+  position: absolute;
+  top: 50%;
+  bottom: 50%;
+}
+.banner__title {
+  font-size: 3rem;
+}
+.banner__overview {
+  max-width: 700px;
+  font-size: 18px;
+}
