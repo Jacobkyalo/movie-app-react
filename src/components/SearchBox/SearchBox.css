@@ -1,3 +1,6 @@
+.search {
+  margin-left: 5px;
+}
 .search__area {
   display: flex;
 }
