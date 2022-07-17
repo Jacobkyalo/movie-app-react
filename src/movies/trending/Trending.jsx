@@ -20,7 +20,7 @@ const Trending = () => {
 
   return (
     <section className="movie">
-      <h2 className="title">Trending</h2>
+      <h2>Trending</h2>
       <div className="movie__content">
         {trending &&
           trending.map((movie, index) => (

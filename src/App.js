@@ -5,6 +5,8 @@ import Header from "./components/Header/Header";
 import SearchBox from "./components/SearchBox/SearchBox";
 import Trending from "./movies/trending/Trending";
 import Popular from "./movies/popular/Popular";
+import TopRated from "./movies/topRated/TopRated";
+import OriginalMovies from "./movies/upcoming/OriginalMovies";
 
 function App() {
   return (
@@ -15,8 +17,10 @@ function App() {
       </header>
       <Banner />
       <Genres />
+      <OriginalMovies />
       <Trending />
       <Popular />
+      <TopRated />
     </div>
   );
 }

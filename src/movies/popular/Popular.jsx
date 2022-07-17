@@ -20,7 +20,7 @@ const Popular = () => {
 
   return (
     <section className="movie">
-      <h2 className="title">Popular</h2>
+      <h2>Popular</h2>
       <div className="movie__content">
         {popular &&
           popular.map((movie, index) => (
