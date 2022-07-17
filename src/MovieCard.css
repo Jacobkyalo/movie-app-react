@@ -1,0 +1,6 @@
+.poster {
+  object-fit: contain;
+  max-width: 200px;
+  border-radius: 10px;
+  margin-right: 10px;
+}

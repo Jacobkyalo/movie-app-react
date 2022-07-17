@@ -4,6 +4,7 @@ import Genres from "./components/Genres/Genres";
 import Header from "./components/Header/Header";
 import SearchBox from "./components/SearchBox/SearchBox";
 import Trending from "./movies/trending/Trending";
+import Popular from "./movies/popular/Popular";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Banner />
       <Genres />
       <Trending />
+      <Popular />
     </div>
   );
 }
