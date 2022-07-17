@@ -16,10 +16,10 @@
   padding: 5px 20px;
   background-color: #000;
   color: #fff;
-  font-size: 18.5px;
+  font-size: 19px;
   border-radius: 20px;
-  word-wrap: normal;
-  word-break: keep-all;
+  /* word-wrap: normal;
+  word-break: keep-all; */
   transition: 0.5s ease-in-out;
   cursor: pointer;
 }
