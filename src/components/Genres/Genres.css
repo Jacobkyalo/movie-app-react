@@ -29,8 +29,3 @@
 .genre:active {
   background-color: #ff0000;
 }
-.title {
-  font-size: 1.6rem;
-  margin-left: 15px;
-  margin-bottom: 0;
-}
