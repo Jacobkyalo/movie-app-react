@@ -1,10 +1,14 @@
 .genres {
-  display: flex;
   margin: 5px 15px;
+}
+.genres__list {
+  display: flex;
   align-items: center;
+  list-style: none;
   overflow-x: scroll;
 }
-.genres::-webkit-scrollbar {
+
+.genres__list::-webkit-scrollbar {
   display: none;
 }
 .genre {
@@ -16,6 +20,14 @@
   border-radius: 20px;
   word-wrap: normal;
   word-break: keep-all;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+.genre:hover {
+  background-color: #2b2929;
+}
+.genre:active {
+  background-color: #ff0000;
 }
 .title {
   font-size: 1.6rem;
