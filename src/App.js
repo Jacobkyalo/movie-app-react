@@ -15,12 +15,14 @@ function App() {
         <Header />
         <SearchBox />
       </header>
-      <Banner />
-      <Genres />
-      <OriginalMovies />
-      <Trending />
-      <Popular />
-      <TopRated />
+      <main>
+        <Banner />
+        <Genres />
+        <OriginalMovies />
+        <Trending />
+        <Popular />
+        <TopRated />
+      </main>
     </div>
   );
 }
