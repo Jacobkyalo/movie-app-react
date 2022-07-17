@@ -17,7 +17,7 @@ const Banner = ({ media }) => {
     );
     //console.log(res.data.results);
   };
-
+  // eslint-disable-next-line
   useEffect(() => {
     fetchBannerDetails();
   }, []);
