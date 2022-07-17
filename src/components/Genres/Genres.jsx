@@ -10,7 +10,7 @@ const Genres = () => {
       `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     setGenres(data.data.genres);
-    console.log(data.data.genres);
+    //console.log(data.data.genres);
   };
 
   useEffect(() => {
@@ -22,11 +22,18 @@ const Genres = () => {
   }, []);
 
   return (
-    <div className="genres">
-      {genres.map((genre) => (
-        <p>{genre.name}</p>
-      ))}
-    </div>
+    <>
+      <h2 className="title">Genres</h2>
+      {genres && (
+        <div className="genres">
+          {genres.map((genre) => (
+            <p className="genre" key={genre.id}>
+              {genre.name}
+            </p>
+          ))}
+        </div>
+      )}
+    </>
   );
 };
 
