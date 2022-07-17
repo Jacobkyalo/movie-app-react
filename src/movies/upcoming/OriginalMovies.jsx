@@ -8,7 +8,7 @@ const OriginalMovies = () => {
 
   const fetchUpcoming = async () => {
     const res = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=12&page=10`
+      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=80&page=10`
     );
     setUpcoming(res.data.results);
     //console.log(res.data.results);
@@ -23,8 +23,13 @@ const OriginalMovies = () => {
       <h2>Upcoming</h2>
       <div className="movie__content">
         {upcoming &&
-          upcoming.map((movie, index, backdrop) => (
-            <MovieCard movie={movie} key={index} backdrop={backdrop} />
+          upcoming.map((movie, index, backdrop, title) => (
+            <MovieCard
+              movie={movie}
+              key={index}
+              backdrop={backdrop}
+              title={title}
+            />
           ))}
       </div>
     </section>
