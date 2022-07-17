@@ -22,3 +22,6 @@
 .backdrop:hover {
   transform: scale(1.05);
 }
+.movie__title {
+  padding-left: 15px;
+}

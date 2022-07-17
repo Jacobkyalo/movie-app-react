@@ -28,8 +28,10 @@ const MovieCard = ({ movie, backdrop, title }) => {
               alt={movie?.title || movie?.original_title || movie?.name}
               className={backdrop ? "backdrop" : "poster"}
             />
-            <p className="movie-title">
-              {movie?.title || movie?.original_title || movie?.name}
+            <p className="movie__title">
+              {backdrop
+                ? movie?.title || movie?.original_title || movie?.name
+                : ""}
             </p>
           </div>
         )}
