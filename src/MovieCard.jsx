@@ -4,7 +4,7 @@ import { no_poster_img } from "./config/config";
 import "./MovieCard.css";
 import { Badge } from "@mui/material";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = ({ movie, backdrop }) => {
   return (
     <>
       <Badge
@@ -16,12 +16,16 @@ const MovieCard = ({ movie }) => {
           <div className="card__content">
             <img
               src={
-                movie.poster_path
+                backdrop
+                  ? movie.backdrop_path
+                    ? `${image_url}${movie.backdrop_path}`
+                    : `${no_poster_img}`
+                  : movie.poster_path
                   ? `${image_url}${movie.poster_path}`
                   : `${no_poster_img}`
               }
               alt={movie?.title || movie?.original_title || movie?.name}
-              className="poster"
+              className={backdrop ? "backdrop" : "poster"}
             />
           </div>
         )}
