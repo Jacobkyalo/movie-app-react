@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MovieCard from "../../MovieCard";
-import "./Popular.css";
+import "../../movies/trending/Trending.css";
 
 const Popular = () => {
   const [popular, setPopular] = useState([]);
 
   const fetchPopular = async () => {
     const res = await axios.get(
-      `https://api.themoviedb.org/3/popular/all/day?api_key=${process.env.REACT_APP_API_KEY}`
+      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     setPopular(res.data.results);
     //console.log(res.data.results);
@@ -19,11 +19,9 @@ const Popular = () => {
   }, []);
 
   return (
-    <section className="popular">
-      <h2 className="title" style={{ padding: "0" }}>
-        popular
-      </h2>
-      <div className="popular__content">
+    <section className="movie">
+      <h2 className="title">Popular</h2>
+      <div className="movie__content">
         {popular &&
           popular.map((movie, index) => (
             <MovieCard movie={movie} key={index} />

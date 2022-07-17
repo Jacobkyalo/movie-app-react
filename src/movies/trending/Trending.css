@@ -1,12 +1,12 @@
-.trending {
+.movie {
   padding: 10px 15px;
 }
-.trending__content {
+.movie__content {
   display: flex;
   align-items: center;
   padding: 10px 0;
   overflow-x: scroll;
 }
-.trending__content::-webkit-scrollbar {
+.movie__content::-webkit-scrollbar {
   display: none;
 }

@@ -1,6 +1,7 @@
 .poster {
   object-fit: contain;
   max-width: 200px;
+  height: 300px;
   border-radius: 10px;
   margin-right: 10px;
 }

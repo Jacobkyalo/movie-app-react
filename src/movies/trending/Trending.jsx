@@ -19,11 +19,9 @@ const Trending = () => {
   }, []);
 
   return (
-    <section className="trending">
-      <h2 className="title" style={{ padding: "0" }}>
-        Trending
-      </h2>
-      <div className="trending__content">
+    <section className="movie">
+      <h2 className="title">Trending</h2>
+      <div className="movie__content">
         {trending &&
           trending.map((movie, index) => (
             <MovieCard movie={movie} key={index} />

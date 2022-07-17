@@ -31,7 +31,7 @@ const Banner = ({ media }) => {
     <section
       className="banner"
       style={{
-        backgroundImage: `url(${image_url}/${banner?.backdrop_path})`,
+        backgroundImage: `url(${image_url}${banner?.backdrop_path})`,
         backgroundPosition: "center center",
         backgroundSize: "cover",
       }}
