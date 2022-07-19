@@ -6,7 +6,7 @@ const GoBackButton = ({ text }) => {
       <button
         type="button"
         style={{
-          padding: "6px 15px",
+          padding: "11px 12px",
           backgroundColor: "#ff0000",
           color: "#fff",
           border: 0,
