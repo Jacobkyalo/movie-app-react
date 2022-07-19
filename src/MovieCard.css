@@ -1,7 +1,7 @@
 .poster {
   object-fit: contain;
   width: 100%;
-  max-width: 200px;
+  width: 200px;
   height: 300px;
   border-radius: 20px;
   margin-right: 15px;
@@ -13,7 +13,7 @@
 .backdrop {
   width: 100%;
   object-fit: cover;
-  max-width: 320px;
+  width: 320px;
   height: 200px;
   border-radius: 20px;
   margin-right: 10px;
