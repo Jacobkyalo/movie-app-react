@@ -7,6 +7,7 @@ import Trending from "./movies/trending/Trending";
 import Popular from "./movies/popular/Popular";
 import TopRated from "./movies/topRated/TopRated";
 import OriginalMovies from "./movies/upcoming/OriginalMovies";
+import GoBackButton from "./components/GoBackButton";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Trending />
         <Popular />
         <TopRated />
+        <GoBackButton text="GO BACK" />
       </main>
     </div>
   );
