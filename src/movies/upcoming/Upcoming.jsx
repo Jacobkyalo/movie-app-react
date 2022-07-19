@@ -3,7 +3,7 @@ import axios from "axios";
 import MovieCard from "../../MovieCard";
 import "../../movies/trending/Trending.css";
 
-const OriginalMovies = () => {
+const Upcoming = () => {
   const [upcoming, setUpcoming] = useState([]);
 
   const fetchUpcoming = async () => {
@@ -36,4 +36,4 @@ const OriginalMovies = () => {
   );
 };
 
-export default OriginalMovies;
+export default Upcoming;
