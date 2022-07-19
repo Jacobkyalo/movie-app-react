@@ -8,13 +8,15 @@ import Popular from "./movies/popular/Popular";
 import TopRated from "./movies/topRated/TopRated";
 import Upcoming from "./movies/upcoming/Upcoming";
 import { Routes, Route } from "react-router-dom";
+import MovieDetails from "./MovieDetails";
 
 function App() {
   return (
     <div className="app">
       <header className="header">
+        <Header />
         <Routes>
-          <Route path="/" element={<Header />} />
+          <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
         <SearchBox />
       </header>

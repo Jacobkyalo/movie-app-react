@@ -5,12 +5,12 @@ import { no_backdrop_img } from "./config/config";
 import "./MovieCard.css";
 import { Link } from "react-router-dom";
 
-const MovieCard = ({ movie, backdrop, title }) => {
+const MovieCard = ({ movie, backdrop }) => {
   return (
     <>
       {movie && (
         <div className="card__content">
-          <Link to="/movie/id">
+          <Link to={`movie/${movie.id}`}>
             <img
               src={
                 backdrop
