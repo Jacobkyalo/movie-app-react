@@ -15,6 +15,7 @@
   color: #fff;
   width: 90%;
   border-radius: 20px;
+  overflow-x: auto;
 }
 .poster {
   width: 250px;
@@ -22,4 +23,34 @@
   box-shadow: 0.5em 0.8em 0.5em #8a8383;
   overflow: none;
   border: 0;
+}
+.profile {
+  object-fit: contain;
+  width: 100px;
+  height: 150px;
+  border: 0;
+  border-radius: 10px;
+}
+
+.genres__lists {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.casts {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  column-gap: 18px;
+  min-height: 200px;
+}
+.cast {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.character {
+  color: gray;
 }

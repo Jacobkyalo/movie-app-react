@@ -5,7 +5,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import { useParams } from "react-router-dom";
 import { image_url } from "./config/config";
 import { no_poster_img } from "./config/config";
-import { no_backdrop_img } from "./config/config";
+import avatar from "./assets/avatar.png";
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
@@ -65,25 +65,43 @@ const MovieDetails = () => {
                   <span>{movie.original_language}</span>
                 </p>
               </div>
-              {/* <div className="genres">
-                <ul className="genres__lists">
-                  {movie.genres.map((genre) => (
-                    <li key={genre.id} className="genre__list">
-                      {genre.name}
-                    </li>
-                  ))}
-                </ul>
-              </div> */}
+              <div className="genres">
+                <>
+                  {movie.genres && (
+                    <ul className="genres__lists">
+                      {movie.genres.map((genre) => (
+                        <li key={genre.id} className="genre__list">
+                          {genre.name}
+                        </li>
+                      ))}
+                    </ul>
+                  )}{" "}
+                </>
+              </div>
               <div className="overview">
                 <h3>Overview</h3>
                 <p>{movie.overview}</p>
               </div>
-              <div className="cast">
+              <div className="casts__details">
                 <h3>Top Cast</h3>
-                <ul>
+                <ul className="casts">
                   {credits &&
                     credits.map((credit) => (
-                      <li key={credit.id}>{credit.name}</li>
+                      <div className="cast">
+                        <div className="img">
+                          <img
+                            src={
+                              credit.profile_path
+                                ? `${image_url}${credit.profile_path}`
+                                : ``
+                            }
+                            alt={credit.namesss}
+                            className="profile"
+                          />
+                        </div>
+                        <li key={credit.id}>{credit.name}</li>
+                        <li className="character">{credit.character}</li>
+                      </div>
                     ))}
                 </ul>
               </div>
