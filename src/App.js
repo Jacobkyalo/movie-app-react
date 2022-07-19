@@ -7,9 +7,6 @@ import Trending from "./movies/trending/Trending";
 import Popular from "./movies/popular/Popular";
 import TopRated from "./movies/topRated/TopRated";
 import Upcoming from "./movies/upcoming/Upcoming";
-import GoBackButton from "./components/GoBackButton";
-//import GenresCard from "./pages/GenresCard";
-import Action from "./pages/Action";
 
 function App() {
   return (
@@ -25,9 +22,6 @@ function App() {
         <Trending />
         <Popular />
         <TopRated />
-        <GoBackButton text="GO BACK" />
-
-        <Action />
       </main>
     </div>
   );
