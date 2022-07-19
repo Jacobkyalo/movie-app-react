@@ -10,19 +10,21 @@ const MovieCard = ({ movie, backdrop, title }) => {
     <>
       {movie && (
         <div className="card__content">
-          <img
-            src={
-              backdrop
-                ? movie.backdrop_path
-                  ? `${image_url}${movie.backdrop_path}`
-                  : `${no_backdrop_img}`
-                : movie.poster_path
-                ? `${image_url}${movie.poster_path}`
-                : `${no_poster_img}`
-            }
-            alt={movie?.title || movie?.original_title || movie?.name}
-            className={backdrop ? "backdrop" : "poster"}
-          />
+          <Link to="/movie/id">
+            <img
+              src={
+                backdrop
+                  ? movie.backdrop_path
+                    ? `${image_url}${movie.backdrop_path}`
+                    : `${no_backdrop_img}`
+                  : movie.poster_path
+                  ? `${image_url}${movie.poster_path}`
+                  : `${no_poster_img}`
+              }
+              alt={movie?.title || movie?.original_title || movie?.name}
+              className={backdrop ? "backdrop" : "poster"}
+            />
+          </Link>
           <p className="movie__title">
             {backdrop
               ? movie?.title || movie?.original_title || movie?.name
