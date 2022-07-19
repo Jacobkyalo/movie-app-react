@@ -10,7 +10,7 @@ const MovieCard = ({ movie, backdrop }) => {
     <>
       {movie && (
         <div className="card__content">
-          <Link to={`movie/${movie.id}`}>
+          <Link to={`/movie/${movie.id}`}>
             <img
               src={
                 backdrop
