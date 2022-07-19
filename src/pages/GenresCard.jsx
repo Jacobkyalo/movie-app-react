@@ -35,6 +35,7 @@ const GenresCard = ({ title, fetchURL }) => {
                 genre?.name
               }
               className="poster"
+              key={genre.id}
             />
           ))}
       </div>
