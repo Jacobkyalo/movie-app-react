@@ -6,7 +6,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import Trending from "./movies/trending/Trending";
 import Popular from "./movies/popular/Popular";
 import TopRated from "./movies/topRated/TopRated";
-import OriginalMovies from "./movies/upcoming/OriginalMovies";
+import Upcoming from "./movies/upcoming/Upcoming";
 import GoBackButton from "./components/GoBackButton";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <main>
         <Banner />
         <Genres />
-        <OriginalMovies />
+        <Upcoming />
         <Trending />
         <Popular />
         <TopRated />
