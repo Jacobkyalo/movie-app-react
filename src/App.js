@@ -7,17 +7,20 @@ import Trending from "./movies/trending/Trending";
 import Popular from "./movies/popular/Popular";
 import TopRated from "./movies/topRated/TopRated";
 import Upcoming from "./movies/upcoming/Upcoming";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="app">
       <header className="header">
-        <Header />
+        <Routes>
+          <Route path="/" element={<Header />} />
+        </Routes>
         <SearchBox />
       </header>
       <main>
         <Banner />
-        <Genres />
+        {/* <Genres /> */}
         <Upcoming />
         <Trending />
         <Popular />
