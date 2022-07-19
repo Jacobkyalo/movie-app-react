@@ -4,6 +4,7 @@ import { no_poster_img } from "./config/config";
 import { no_backdrop_img } from "./config/config";
 import "./MovieCard.css";
 import { Badge } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie, backdrop, title }) => {
   return (
