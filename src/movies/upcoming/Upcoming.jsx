@@ -8,7 +8,7 @@ const Upcoming = () => {
 
   const fetchUpcoming = async () => {
     const res = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&with_genres=27&page=10`
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${process.env.REACT_APP_API_KEY}&with_genres=27&page=10`
     );
     setUpcoming(res.data.results);
     //console.log(res.data.results);
