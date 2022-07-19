@@ -9,7 +9,7 @@ const GenresCard = ({ title, fetchURL }) => {
   const fetchGenres = async () => {
     const data = await axios.get(fetchURL);
     setGenres(data.data.results);
-    console.log(data.data.results);
+    //console.log(data.data.results);
   };
 
   useEffect(() => {
