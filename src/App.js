@@ -15,10 +15,15 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
-          {/* <header className="header"> */}
-          <Route path="/" element={<Header />} />
-          {/* <SearchBox /> */}
-          {/* </header> */}
+          <Route
+            path="/"
+            element={
+              <header className="header">
+                <Header />
+                <SearchBox />
+              </header>
+            }
+          />
           <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
         <main>
