@@ -12,6 +12,7 @@ const GoBackButton = ({ text }) => {
           border: 0,
           borderRadius: "6px",
           fontSize: "18px",
+          cursor: "pointer",
         }}
       >
         {text}
