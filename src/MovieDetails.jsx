@@ -7,8 +7,6 @@ import GoBackButton from "./components/GoBackButton";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Button } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import YouTube from "react-youtube";
-import movieTrailer from "movie-trailer";
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
@@ -101,6 +99,15 @@ const MovieDetails = () => {
                 <div className="trailer">
                   <Button href={`https://www.youtube.com/watch?v=${video}`}>
                     <YouTubeIcon sx={{ fontSize: 40, color: "#fff" }} />
+                    <span
+                      style={{
+                        color: "#fff",
+                        fontSize: "20px",
+                        marginLeft: "7px",
+                      }}
+                    >
+                      Play Trailer
+                    </span>
                   </Button>
                 </div>
               </div>
