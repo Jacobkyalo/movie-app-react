@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Banner.css";
 import { image_url } from "../../config/config";
+import { Link } from "react-router-dom";
 
 const Banner = ({ media }) => {
-  const [banner, setBanner] = useState();
+  const [banner, setBanner] = useState([]);
 
   const fetchBannerDetails = async () => {
     const res = await axios.get(
@@ -15,8 +16,8 @@ const Banner = ({ media }) => {
     setBanner(
       res.data.results[Math.floor(Math.random() * res.data.results.length - 1)]
     );
-    //console.log(res.data.results);
   };
+
   // eslint-disable-next-line
   useEffect(() => {
     fetchBannerDetails();
@@ -28,26 +29,28 @@ const Banner = ({ media }) => {
   };
 
   return (
-    <section
-      className="banner"
-      style={{
-        backgroundImage: `url(${image_url}${banner?.backdrop_path})`,
-        backgroundPosition: "center center",
-        backgroundSize: "cover",
-      }}
-    >
-      {banner && (
-        <div className="banner__content">
-          <h3 className="banner__title">
-            {banner?.original_title ||
-              banner?.title ||
-              banner?.original_name ||
-              banner?.name}
-          </h3>
-          <p className="banner__overview">{truncate(banner.overview, 200)}</p>
-        </div>
-      )}
-    </section>
+    <Link to={`/movie/${banner.id}`}>
+      <section
+        className="banner"
+        style={{
+          backgroundImage: `url(${image_url}${banner?.backdrop_path})`,
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+        }}
+      >
+        {banner && (
+          <div className="banner__content">
+            <h3 className="banner__title">
+              {banner?.original_title ||
+                banner?.title ||
+                banner?.original_name ||
+                banner?.name}
+            </h3>
+            <p className="banner__overview">{truncate(banner.overview, 200)}</p>
+          </div>
+        )}
+      </section>
+    </Link>
   );
 };
 
