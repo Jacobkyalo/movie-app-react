@@ -42,52 +42,57 @@ const MovieDetails = () => {
       {movie && (
         <div className="modal">
           <div className="modal__content">
-            <div className="poster__modal">
-              <img
-                src={
-                  movie.poster_path
-                    ? `${image_url}${movie.poster_path}`
-                    : `${no_poster_img}`
-                }
-                alt={movie?.title || movie?.original_title || movie?.name}
-                className={"poster"}
-              />
+            <div className="modal__upper">
+              <div className="poster__modal">
+                <img
+                  src={
+                    movie.poster_path
+                      ? `${image_url}${movie.poster_path}`
+                      : `${no_poster_img}`
+                  }
+                  alt={movie?.title || movie?.original_title || movie?.name}
+                  className={"poster"}
+                  id={"details__poster"}
+                />
+              </div>
+              <div className="other__modal__content">
+                <h1>{movie.title}</h1>
+                <h2>{movie.release_date.slice(0, 4)}</h2>
+                <p className="tagline">{movie.tagline}</p>
+                <div className="runtime__rating">
+                  <p className="vote">{movie.vote_average} / 10</p>
+                  <p className="runtime">
+                    <span>{movie.runtime}min / </span>
+                    <span>{movie.release_date} / </span>
+                    <span>{movie.original_language}</span>
+                  </p>
+                </div>
+                <div className="genres">
+                  <>
+                    {movie.genres && (
+                      <ul className="genres__lists">
+                        {movie.genres.map((genre) => (
+                          <li key={genre.id} className="genre__list">
+                            {genre.name}
+                          </li>
+                        ))}
+                      </ul>
+                    )}{" "}
+                  </>
+                </div>
+              </div>
             </div>
-            <div className="other__modal__content">
-              <h1>{movie.title}</h1>
-              <h2>{movie.release_date}</h2>
-              <p className="tagline">{movie.tagline}</p>
-              <div className="runtime__rating">
-                <p className="vote">{movie.vote_average}</p>
-                <p className="runtime">
-                  <span>{movie.runtime}min</span>
-                  <span>{movie.release_date}</span>
-                  <span>{movie.original_language}</span>
-                </p>
-              </div>
-              <div className="genres">
-                <>
-                  {movie.genres && (
-                    <ul className="genres__lists">
-                      {movie.genres.map((genre) => (
-                        <li key={genre.id} className="genre__list">
-                          {genre.name}
-                        </li>
-                      ))}
-                    </ul>
-                  )}{" "}
-                </>
-              </div>
-              <div className="overview">
-                <h3>Overview</h3>
-                <p>{movie.overview}</p>
-              </div>
-              <div className="casts__details">
-                <h3>Top Cast</h3>
-                <ul className="casts">
-                  {credits &&
-                    credits.map((credit) => (
-                      <div className="cast">
+            <div className="overview">
+              <h3>Overview</h3>
+              <p>{movie.overview}</p>
+            </div>
+            <div className="actors">
+              <h3>Top Cast</h3>
+              <ul className="casts">
+                {credits &&
+                  credits.map((credit) => (
+                    <div className="cast">
+                      <div className="cast__details" key={credit.id}>
                         <div className="img">
                           <img
                             src={
@@ -99,12 +104,12 @@ const MovieDetails = () => {
                             className="profile"
                           />
                         </div>
-                        <li key={credit.id}>{credit.name}</li>
+                        <li className="name">{credit.name}</li>
                         <li className="character">{credit.character}</li>
                       </div>
-                    ))}
-                </ul>
-              </div>
+                    </div>
+                  ))}
+              </ul>
             </div>
           </div>
         </div>
