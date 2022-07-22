@@ -7,13 +7,14 @@ import GoBackButton from "./components/GoBackButton";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Button } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import { YouTube } from "react-youtube";
+import YouTube from "react-youtube";
+import movieTrailer from 'movie-trailer'
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const [credits, setCredits] = useState([]);
-  const [video, setVideo] = useState();
+  const [video, setVideo] = useState("");
   const params = useParams();
   const navigate = useNavigate();
 
@@ -22,38 +23,56 @@ const MovieDetails = () => {
       `https://api.themoviedb.org/3/movie/${params.id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     setMovie(data.data);
-    //console.log(data.data);
   };
 
-  const fetchTopCast = async () => {
+  const fetchTopCasts = async () => {
     const credits = await axios.get(
       `https://api.themoviedb.org/3/movie/${params.id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     setCredits(credits.data.cast);
   };
 
-  const fetchTrailer = async () => {
-    const video = await axios.get(
-      `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
-    );
-    console.log(video);
-    setVideo(video.data.results[2]?.key);
-  };
+  // const fetchTrailer = async () => {
+  //   const video = await axios.get(
+  //     `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+  //   );
+  //   setVideo(video.data.results[2]?.key);
+  // };
   useEffect(() => {
     fetchMovieDetails();
-    fetchTopCast();
-    fetchTrailer();
+    fetchTopCasts();
+    //fetchTrailer();
   }, []);
 
+  //trailer options from react-youtube
+  const opts = {
+    height: "300",
+    width: "5500",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
+  const playTrailer = (movie) => {
+    if (video) {
+      setVideo("");
+    } else {
+      movieTrailer(movie?.name || movie?.title || "")
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setVideo(urlParams.get("v"));
+        })
+        .catch((err) => console.log(err));
+    }
+  };
   return (
     <div>
       {movie && (
         <div className="modal">
-          <div className="modal__content">
+          <div className="modal__content" key={movie.id}>
             <div className="btn" onClick={() => navigate(-1)}>
               <GoBackButton text={<KeyboardBackspaceIcon />} />
             </div>
-
             <div className="modal__upper">
               <div className="poster__modal">
                 <img
@@ -94,19 +113,21 @@ const MovieDetails = () => {
                     )}{" "}
                   </>
                 </div>
+
                 <div className="trailer">
-                  <Button href={`https://www.youtube.com/watch?v=${video}`}>
+                  <Button onClick={()=>playTrailer(video)}>
                     <YouTubeIcon sx={{ fontSize: 40, color: "#fff" }} />
                   </Button>
                 </div>
               </div>
             </div>
+            {video&&<YouTube videoId={video} opts={opts} />}
             <div className="overview">
               <h3>Overview</h3>
               <p>{movie.overview}</p>
             </div>
             <div className="actors">
-              <h3>Top Cast</h3>
+              <h3>Top Casts</h3>
               <ul className="casts">
                 {credits &&
                   credits.map((credit) => (
