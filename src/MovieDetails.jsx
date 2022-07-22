@@ -60,7 +60,9 @@ const MovieDetails = () => {
                 <h2>{movie.release_date.slice(0, 4)}</h2>
                 <p className="tagline">{movie.tagline}</p>
                 <div className="runtime__rating">
-                  <p className="vote">{movie.vote_average} / 10</p>
+                  <p className="vote" title="rating">
+                    {movie.vote_average} / 10
+                  </p>
                   <p className="runtime">
                     <span>{movie.runtime}min / </span>
                     <span>{movie.release_date} / </span>
@@ -98,7 +100,7 @@ const MovieDetails = () => {
                             src={
                               credit.profile_path
                                 ? `${image_url}${credit.profile_path}`
-                                : ``
+                                : `${no_poster_img}`
                             }
                             alt={credit.namesss}
                             className="profile"
