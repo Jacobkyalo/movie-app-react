@@ -1,8 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { image_url } from "./config/config";
-import { no_poster_img } from "./config/config";
+import { image_url, no_poster_img } from "./config/config";
 import GoBackButton from "./components/GoBackButton";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Button } from "@mui/material";
