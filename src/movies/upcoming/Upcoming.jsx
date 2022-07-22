@@ -20,7 +20,7 @@ const Upcoming = () => {
 
   return (
     <section className="movie">
-      <h2>Upcoming</h2>
+      <h2 className="title">Upcoming</h2>
       <div className="movie__content">
         {upcoming &&
           upcoming.map((movie, index, backdrop, title) => (

@@ -20,7 +20,7 @@ const TopRated = () => {
 
   return (
     <section className="movie">
-      <h2>Top Rated</h2>
+      <h2 className="title">Top Rated</h2>
       <div className="movie__content">
         {topRated &&
           topRated.map((movie, index) => (

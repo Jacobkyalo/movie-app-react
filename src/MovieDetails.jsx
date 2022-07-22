@@ -63,7 +63,7 @@ const MovieDetails = () => {
                       : `${no_poster_img}`
                   }
                   alt={movie?.title || movie?.original_title || movie?.name}
-                  className={"poster"}
+                  className={"poster_img"}
                   id={"details__poster"}
                 />
               </div>
