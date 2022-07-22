@@ -5,7 +5,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import { useParams } from "react-router-dom";
 import { image_url } from "./config/config";
 import { no_poster_img } from "./config/config";
-import avatar from "./assets/avatar.png";
+import GoBackButton from "./components/GoBackButton";
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
@@ -35,10 +35,6 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <header className="header">
-        <Header />
-        <SearchBox />
-      </header>
       {movie && (
         <div className="modal">
           <div className="modal__content">
