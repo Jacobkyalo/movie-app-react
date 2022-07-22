@@ -32,6 +32,7 @@
 .other__modal__content h1,
 h2 {
   font-size: 3rem;
+  line-height: 1.2;
 }
 
 .other__modal__content h2::before {
@@ -137,4 +138,12 @@ h2 {
   left: 20px;
   top: 20px;
   margin-bottom: 20px;
+}
+.trailer {
+  width: 100%;
+  padding: 0 20px;
+  background-color: #ff0000;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
 }

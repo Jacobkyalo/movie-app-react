@@ -1,17 +1,19 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Header from "./components/Header/Header";
-import SearchBox from "./components/SearchBox/SearchBox";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { image_url } from "./config/config";
 import { no_poster_img } from "./config/config";
 import GoBackButton from "./components/GoBackButton";
+import YouTubeIcon from "@mui/icons-material/YouTube";
+import { Button } from "@mui/material";
+import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const [credits, setCredits] = useState([]);
   const params = useParams();
+  const navigate = useNavigate();
 
   const fetchMovieDetails = async () => {
     const data = await axios.get(
@@ -38,9 +40,8 @@ const MovieDetails = () => {
       {movie && (
         <div className="modal">
           <div className="modal__content">
-            <div className="btn">
-              {" "}
-              <GoBackButton text="GoBack" />
+            <div className="btn" onClick={() => navigate(-1)}>
+              <GoBackButton text={<KeyboardBackspaceIcon />} />
             </div>
 
             <div className="modal__upper">
@@ -58,7 +59,7 @@ const MovieDetails = () => {
               </div>
               <div className="other__modal__content">
                 <h1>{movie.title}</h1>
-                <h2>{movie.release_date.slice(0, 4)}</h2>
+                <h2>{movie.release_date}</h2>
                 <p className="tagline">{movie.tagline}</p>
                 <div className="runtime__rating">
                   <p className="vote" title="rating">
@@ -82,6 +83,11 @@ const MovieDetails = () => {
                       </ul>
                     )}{" "}
                   </>
+                </div>
+                <div className="trailer">
+                  <Button>
+                    <YouTubeIcon sx={{ fontSize: 40, color: "#fff" }} />
+                  </Button>
                 </div>
               </div>
             </div>
