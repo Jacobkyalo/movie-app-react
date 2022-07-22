@@ -8,7 +8,7 @@ const Popular = () => {
 
   const fetchPopular = async () => {
     const res = await axios.get(
-      `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
     );
     setPopular(res.data.results);
     //console.log(res.data.results);
