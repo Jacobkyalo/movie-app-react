@@ -38,6 +38,11 @@ const MovieDetails = () => {
       {movie && (
         <div className="modal">
           <div className="modal__content">
+            <div className="btn">
+              {" "}
+              <GoBackButton text="GoBack" />
+            </div>
+
             <div className="modal__upper">
               <div className="poster__modal">
                 <img
