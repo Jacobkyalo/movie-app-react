@@ -7,11 +7,13 @@ import GoBackButton from "./components/GoBackButton";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import { Button } from "@mui/material";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+import { YouTube } from "react-youtube";
 import "./MovieDetails.css";
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
   const [credits, setCredits] = useState([]);
+  const [video, setVideo] = useState();
   const params = useParams();
   const navigate = useNavigate();
 
@@ -30,9 +32,17 @@ const MovieDetails = () => {
     setCredits(credits.data.cast);
   };
 
+  const fetchTrailer = async () => {
+    const video = await axios.get(
+      `https://api.themoviedb.org/3/movie/${params.id}/videos?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+    );
+    console.log(video);
+    setVideo(video.data.results[2]?.key);
+  };
   useEffect(() => {
     fetchMovieDetails();
     fetchTopCast();
+    fetchTrailer();
   }, []);
 
   return (
@@ -85,7 +95,7 @@ const MovieDetails = () => {
                   </>
                 </div>
                 <div className="trailer">
-                  <Button>
+                  <Button href={`https://www.youtube.com/watch?v=${video}`}>
                     <YouTubeIcon sx={{ fontSize: 40, color: "#fff" }} />
                   </Button>
                 </div>
