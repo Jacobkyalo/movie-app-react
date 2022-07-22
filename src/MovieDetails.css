@@ -5,7 +5,7 @@
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
-  overflow: auto;
+  overflow-y: auto;
   z-index: 10;
 }
 .modal__content {
@@ -25,7 +25,6 @@
   flex-wrap: wrap;
 }
 .other__modal__content {
-  /* margin-left: 150px; */
   margin-top: 50px;
   text-align: center;
 }
@@ -60,17 +59,19 @@ h2 {
   border-radius: 5px;
   border: 0;
   margin-top: 10px;
+  margin-right: 15px;
 }
 .runtime {
   font-size: 20px;
   margin-top: 10px;
 }
-.poster {
+.poster_img {
+  object-fit: contain;
   width: 250px;
   height: 370px;
-  overflow: none;
   border: 0;
   margin-top: 60px;
+  border-radius: 20px;
 }
 #details__poster {
   box-shadow: 0.5em 0.8em 0.5em #8a8383;
@@ -85,7 +86,7 @@ h2 {
 }
 .genre__list {
   font-size: 20px;
-  padding: 10px 15px;
+  padding: 5px 18px;
   margin: 5px;
   background-color: #000;
   border-radius: 30px;
@@ -114,6 +115,7 @@ h2 {
   display: flex;
   align-items: center;
   overflow-x: auto;
+  overflow-y: hidden;
   padding: 20px 0;
   margin: 0;
 }
@@ -138,6 +140,9 @@ h2 {
   left: 20px;
   top: 20px;
   margin-bottom: 20px;
+}
+.btn:hover {
+  transform: scaleY(1.06);
 }
 .trailer {
   width: 100%;

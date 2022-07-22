@@ -1,6 +1,5 @@
 .poster {
   object-fit: contain;
-  width: 100%;
   width: 200px;
   height: 300px;
   border-radius: 20px;
@@ -24,4 +23,8 @@
 }
 .movie__title {
   padding-left: 15px;
+}
+.card__content {
+  margin: 0;
+  padding: 0;
 }
