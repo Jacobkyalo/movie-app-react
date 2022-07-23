@@ -3,6 +3,8 @@
 About
 A React App that consumes [TMDB API](https://developers.themoviedb.org/3/getting-started/introduction) to display the current trending, upcoming, top rated, and popular movies and tv-shows.
 
+![GitHub Logo](/src/assets/movie.PNG)
+
 ## SetUp
 
 Obtain our TMDB API KEY and place in a .env file
