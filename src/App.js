@@ -9,6 +9,7 @@ import Upcoming from "./movies/upcoming/Upcoming";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieDetails from "./MovieDetails";
 import Search from "./components/Search";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
           <Popular />
           <TopRated />
         </main>
+        <Footer />
       </div>
     </Router>
   );
