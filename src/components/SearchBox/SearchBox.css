@@ -1,26 +1,2 @@
-.search {
-  margin-left: 5px;
-}
-.search__area {
-  display: flex;
-}
-.search__box {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  border-bottom: 3px solid #ff0000;
-  color: #fff;
-  font-size: 18px;
-  padding: 5px;
-  background-color: #111;
-}
 
-@media (max-width: 800px) {
-  .search__area {
-    flex-wrap: nowrap;
-  }
-  .search__box {
-    width: 100%;
-  }
-}
-/* 144eb8 */
+
