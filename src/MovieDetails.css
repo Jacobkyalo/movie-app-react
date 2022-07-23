@@ -12,7 +12,7 @@
   position: relative;
   padding: 30px 50px;
   background-color: #111;
-  margin: 20% auto;
+  margin: 5% auto;
   color: #fff;
   width: 90%;
   border-radius: 20px;
@@ -26,6 +26,7 @@
 }
 .other__modal__content {
   margin-top: 50px;
+  margin-left: 20px;
   text-align: center;
 }
 .other__modal__content h1,
