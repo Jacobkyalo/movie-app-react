@@ -8,6 +8,7 @@ import TopRated from "./movies/topRated/TopRated";
 import Upcoming from "./movies/upcoming/Upcoming";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MovieDetails from "./MovieDetails";
+import Search from "./components/Search";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             }
           />
           <Route path="/movie/:id" element={<MovieDetails />} />
+          <Route path="/search" element={<Search />} />
         </Routes>
         <main>
           <Banner />
