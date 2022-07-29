@@ -46,6 +46,11 @@ const MovieDetails = () => {
     fetchTrailer();
   }, []);
 
+  //truncate function
+  const truncate = (str, n) => {
+    return str?.length > n ? str.substr(0, n - 1) + "" : str;
+  };
+
   return (
     <div>
       {movie && (
@@ -69,7 +74,7 @@ const MovieDetails = () => {
               </div>
               <div className="other__modal__content">
                 <h1>{movie.title}</h1>
-                <h2>{movie.release_date}</h2>
+                <h2>{truncate(movie.release_date, 5)}</h2>
                 <p className="tagline">{movie.tagline}</p>
                 <div className="runtime__rating">
                   <p className="vote" title="rating">
