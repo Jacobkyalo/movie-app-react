@@ -28,3 +28,11 @@
   margin: 0;
   padding: 0;
 }
+@media(max-width:500px){
+  .poster:hover{
+    transform:scale(1)
+  }
+   .backdrop:hover{
+    transform:scale(1)
+  }
+}
