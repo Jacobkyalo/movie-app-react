@@ -54,4 +54,4 @@ const Banner = ({ media }) => {
   );
 };
 
-export default Banner;
+export default React.memo(Banner);
