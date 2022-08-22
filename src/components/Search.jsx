@@ -49,7 +49,9 @@ const Search = () => {
               className="search__box"
               value={searchInput}
               onChange={(e) => setSearchInput(e.target.value)}
+              placeholder="Search Movies..."
             />
+
             <Button
               variant="contained"
               sx={{ marginLeft: "10px", backgroundColor: "red" }}
