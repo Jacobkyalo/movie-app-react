@@ -54,8 +54,8 @@ const MovieDetails = () => {
   return (
     <div>
       {movie && (
-        <div className="modal">
-          <div className="modal__content" key={movie.id}>
+        <div className="modal" key={movie.id}>
+          <div className="modal__content">
             <div className="btn" onClick={() => navigate(-1)}>
               <GoBackButton text={<KeyboardBackspaceIcon />} />
             </div>
@@ -125,8 +125,8 @@ const MovieDetails = () => {
               <ul className="casts">
                 {credits &&
                   credits.map((credit) => (
-                    <div className="cast">
-                      <div className="cast__details" key={credit.id}>
+                    <div className="cast" key={credit.id}>
+                      <div className="cast__details">
                         <div className="img">
                           <img
                             src={
