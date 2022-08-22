@@ -1,4 +1,4 @@
-.modal {
+.page {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,37 +8,37 @@
   overflow-y: auto;
   z-index: 10;
 }
-.modal__content {
+.page__content {
   position: relative;
   padding: 30px 50px;
   background-color: #111;
-  margin: 5% auto;
+  /* margin: 5% auto; */
   color: #fff;
-  width: 90%;
-  border-radius: 20px;
+  width: 100%;
+  height: 100%;
   overflow-x: auto;
 }
-.modal__upper {
+.page__upper {
   display: flex;
   align-items: flex-start;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-.other__modal__content {
+.other__page__content {
   margin-top: 50px;
   margin-left: 20px;
   text-align: center;
 }
-.other__modal__content h1,
+.other__page__content h1,
 h2 {
   font-size: 2rem;
   line-height: 1.3;
 }
 
-.other__modal__content h2::before {
+.other__page__content h2::before {
   content: "(";
 }
-.other__modal__content h2::after {
+.other__page__content h2::after {
   content: ")";
 }
 .tagline {

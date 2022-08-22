@@ -26,8 +26,8 @@ const Search = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div className="modal">
-        <div className="modal__content">
+      <div className="page">
+        <div className="page__content">
           <Button
             onClick={() => navigate(-1)}
             sx={{

@@ -54,13 +54,13 @@ const MovieDetails = () => {
   return (
     <div>
       {movie && (
-        <div className="modal" key={movie.id}>
-          <div className="modal__content">
+        <div className="page" key={movie.id}>
+          <div className="page__content">
             <div className="btn" onClick={() => navigate(-1)}>
               <GoBackButton text={<KeyboardBackspaceIcon />} />
             </div>
-            <div className="modal__upper">
-              <div className="poster__modal">
+            <div className="page__upper">
+              <div className="poster__page">
                 <img
                   src={
                     movie.poster_path
@@ -72,7 +72,7 @@ const MovieDetails = () => {
                   id={"details__poster"}
                 />
               </div>
-              <div className="other__modal__content">
+              <div className="other__page__content">
                 <h1>{movie.title}</h1>
                 <h2>{truncate(movie.release_date, 5)}</h2>
                 <p className="tagline">{movie.tagline}</p>

@@ -19,23 +19,25 @@ function App() {
           <Route
             path="/"
             element={
-              <header className="header">
-                <Header />
-                <SearchBox />
-              </header>
+              <>
+                <header className="header">
+                  <Header />
+                  <SearchBox />
+                </header>
+                <main>
+                  <Banner />
+                  <Upcoming />
+                  <Trending />
+                  <Popular />
+                  <TopRated />
+                </main>
+                <Footer />
+              </>
             }
           />
           <Route path="/movie/:id" element={<MovieDetails />} />
           <Route path="/search" element={<Search />} />
         </Routes>
-        <main>
-          <Banner />
-          <Upcoming />
-          <Trending />
-          <Popular />
-          <TopRated />
-        </main>
-        <Footer />
       </div>
     </Router>
   );
