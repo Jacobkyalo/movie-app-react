@@ -13,6 +13,7 @@ const Footer = () => {
         <a
           href="https://github.com/Jacobkyalo"
           target="_blank"
+          rel="noopener noreferrer"
           style={{ textDecoration: "none", color: "#ff0000" }}
         >
           <span> Jack</span>
